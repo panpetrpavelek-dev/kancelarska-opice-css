@@ -1,3 +1,7 @@
+/* TEST NACTENI CSS */
+.fapi-order-form::before {
+  content: "TEST CSS FUNGUJE" !important;
+}
 /* hlavní formulář */
 .fapi-order-form,
 .fapi-order-form * {
