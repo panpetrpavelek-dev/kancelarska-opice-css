@@ -452,3 +452,73 @@
   border-color: #D4AF37 !important;
   box-shadow: none !important;
 }
+/* ===== PLATEBNÍ METODA JAKO STATICKÉ LOGO UPROSTŘED ===== */
+
+/* celý obsah sekce plateb vystředit */
+.fapi-order-form .fapi-form-payment-methods .f-p-6,
+.fapi-order-form .fapi-form-payment-methods .f-p-6 > div {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* přepsat FAPI grid, který to drží vlevo */
+.fapi-order-form .fapi-form-payment-methods .f-grid,
+.fapi-order-form .fapi-form-payment-methods div[class*="f-grid"] {
+  display: flex !important;
+  width: 100% !important;
+  grid-template-columns: none !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* samotný obal platební metody */
+.fapi-order-form .fapi-form-payment-method {
+  display: flex !important;
+  width: 100% !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+/* karta s VISA logem - vizuálně jako neklikací badge */
+.fapi-order-form .fapi-form-payment-method > div,
+.fapi-order-form .fapi-form-payment-method [role="button"],
+.fapi-order-form .fapi-form-payment-method .f-credit-card {
+  width: 190px !important;
+  height: 86px !important;
+  margin: 0 auto !important;
+  background: #111827 !important;
+  border: 1px solid rgba(212, 175, 55, 0.55) !important;
+  border-radius: 16px !important;
+  box-shadow: none !important;
+  transform: none !important;
+  cursor: default !important;
+  text-decoration: none !important;
+}
+
+/* logo uvnitř */
+.fapi-order-form .fapi-form-payment-method img {
+  display: block !important;
+  margin: 0 auto !important;
+  max-width: 145px !important;
+  height: auto !important;
+  pointer-events: none !important;
+}
+
+/* vypnout hover efekt, ať to nepůsobí jako odkaz */
+.fapi-order-form .fapi-form-payment-method > div:hover,
+.fapi-order-form .fapi-form-payment-method [role="button"]:hover,
+.fapi-order-form .fapi-form-payment-method .f-credit-card:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  cursor: default !important;
+}
+
+/* pokud tam FAPI drží klikací chování, vizuálně ho zklidnit */
+.fapi-order-form .fapi-form-payment-method > div *,
+.fapi-order-form .fapi-form-payment-method [role="button"] * {
+  cursor: default !important;
+  text-decoration: none !important;
+}
