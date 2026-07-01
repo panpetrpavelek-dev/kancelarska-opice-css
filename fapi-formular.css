@@ -417,3 +417,38 @@
   opacity: 0 !important;
   pointer-events: none !important;
 }
+/* ===== VISA DOPROSTŘED + KLIDNĚJŠÍ VZHLED ===== */
+
+/* vystředit platební metodu */
+.fapi-order-form .fapi-form-payment-methods,
+.fapi-order-form .fapi-form-payment-method {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.fapi-order-form .fapi-form-payment-method > div {
+  width: 180px !important;
+  margin: 0 auto !important;
+}
+
+/* ať to nevypadá jako odkaz nebo aktivní tlačítko */
+.fapi-order-form .fapi-form-payment-method > div,
+.fapi-order-form .fapi-form-payment-method > div * {
+  cursor: default !important;
+  text-decoration: none !important;
+}
+
+/* zrušit "tlačítkový" hover efekt */
+.fapi-order-form .fapi-form-payment-method > div:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  border-color: #D4AF37 !important;
+}
+
+/* selected stav nechat, ale klidnější */
+.fapi-order-form .fapi-form-payment-method .payment-method-selected {
+  background: #1F2937 !important;
+  border-color: #D4AF37 !important;
+  box-shadow: none !important;
+}
