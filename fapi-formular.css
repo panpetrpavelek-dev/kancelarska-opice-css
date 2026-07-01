@@ -556,3 +556,10 @@
   line-height: 1.05 !important;
   font-weight: 900 !important;
 }
+/* ===== SCHOVAT HORNÍ CENU U PRODUKTU ===== */
+
+.fapi-order-form .product-row .product-price,
+.fapi-order-form .product-row .fapi-form-item-price,
+.fapi-order-form .product-row .f-line-through {
+  display: none !important;
+}
