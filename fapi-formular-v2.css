@@ -410,3 +410,49 @@
   text-transform: uppercase !important;
   color: rgba(209, 213, 219, 0.72) !important;
 }
+/* ===== PREMIUM ÚPRAVA PRODUKTOVÉHO BLOKU ===== */
+
+.fapi-order-form .product-row {
+  padding: 24px !important;
+  background:
+    linear-gradient(135deg, rgba(31, 41, 55, 0.98) 0%, rgba(38, 50, 68, 0.98) 100%) !important;
+  border: 1px solid rgba(212, 175, 55, 0.28) !important;
+  border-radius: 16px !important;
+}
+
+.fapi-order-form .product-row label,
+.fapi-order-form .product-row label span {
+  font-size: 20px !important;
+  line-height: 1.3 !important;
+  font-weight: 850 !important;
+  color: #FFFFFF !important;
+}
+
+.fapi-order-form .product-row p {
+  margin-top: 18px !important;
+  max-width: 100% !important;
+  font-size: 15px !important;
+  line-height: 1.65 !important;
+  color: #D1D5DB !important;
+}
+
+.fapi-order-form .product-row p strong {
+  color: #FFFFFF !important;
+  font-weight: 800 !important;
+}
+
+.fapi-order-form .product-row p br {
+  line-height: 1.45 !important;
+}
+
+/* závěrečná cena v popisu produktu decentně */
+.fapi-order-form .product-row p strong:last-child {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 10px 12px;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  border-radius: 10px;
+  color: #D4AF37 !important;
+  font-size: 15px !important;
+}
