@@ -1,0 +1,20 @@
+/* ===== FINÁLNÍ OPRAVA V2 ===== */
+
+/* schovat horní cenu u produktu */
+.fapi-order-form .product-price,
+.fapi-order-form .product-row .product-price,
+.fapi-order-form .fapi-form-item-price,
+.fapi-order-form .f-line-through {
+  display: none !important;
+}
+
+/* ponechat cenu jen ve shrnutí objednávky */
+.fapi-order-form .fapi-form-result .fapi-form-prices,
+.fapi-order-form .fapi-form-result .fapi-form-prices * {
+  display: flex;
+}
+
+/* kontrola, že se opravdu načítá nová verze */
+.fapi-order-form::before {
+  content: "Kancelářská opice" !important;
+}
