@@ -353,3 +353,60 @@
     font-size: 16px !important;
   }
 }
+/* ===== HEZČÍ PRODEJNÍ BLOK PRODUKTU ===== */
+
+.fapi-order-form .product-row {
+  padding: 28px !important;
+  background:
+    radial-gradient(circle at top right, rgba(33, 163, 102, 0.18), transparent 34%),
+    linear-gradient(135deg, #1F2937 0%, #263244 100%) !important;
+  border: 1px solid rgba(212, 175, 55, 0.38) !important;
+  border-radius: 18px !important;
+}
+
+.fapi-order-form .product-row label,
+.fapi-order-form .product-row label span {
+  font-size: 22px !important;
+  line-height: 1.25 !important;
+  font-weight: 900 !important;
+  color: #FFFFFF !important;
+}
+
+.fapi-order-form .product-row p {
+  margin-top: 22px !important;
+  font-size: 15px !important;
+  line-height: 1.75 !important;
+  color: #D1D5DB !important;
+}
+
+.fapi-order-form .product-row p strong {
+  color: #FFFFFF !important;
+  font-weight: 850 !important;
+}
+
+.fapi-order-form .product-row p br {
+  line-height: 1.8 !important;
+}
+
+/* zelené fajfky opticky zvýraznit přes text */
+.fapi-order-form .product-row p {
+  max-width: 92%;
+}
+
+/* lehce zvýraznit poslední větu */
+.fapi-order-form .product-row p strong:last-child {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 12px 14px;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.26);
+  border-radius: 12px;
+  color: #D4AF37 !important;
+}
+/* méně výrazný systémový nadpis Položky a ceny */
+.fapi-order-form .fapi-container-header .fapi-form-basic-block-title {
+  font-size: 13px !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  color: rgba(209, 213, 219, 0.72) !important;
+}
