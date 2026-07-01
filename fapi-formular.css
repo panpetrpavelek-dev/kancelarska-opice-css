@@ -536,3 +536,23 @@
   text-decoration: none !important;
   color: #D4AF37 !important;
 }
+/* ===== ZRUŠIT ŠKRTNUTÍ CENY ===== */
+
+.fapi-order-form .f-line-through,
+.fapi-order-form .fapi-form-item-price,
+.fapi-order-form .product-price,
+.fapi-order-form .product-price *,
+.fapi-order-form .product-row .fapi-form-item-price,
+.fapi-order-form .product-row .fapi-form-item-price:not(.fapi-form-discounted-price) {
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+  -webkit-text-decoration-line: none !important;
+}
+
+/* horní cena produktu jako normální hlavní cena */
+.fapi-order-form .product-row .fapi-form-item-price {
+  color: #D4AF37 !important;
+  font-size: 30px !important;
+  line-height: 1.05 !important;
+  font-weight: 900 !important;
+}
