@@ -522,3 +522,17 @@
   cursor: default !important;
   text-decoration: none !important;
 }
+/* ===== CENA BEZ SLEVY - NEŠKRTAT ===== */
+
+.fapi-order-form .product-row .fapi-form-item-price {
+  text-decoration: none !important;
+  color: #D4AF37 !important;
+  font-size: 30px !important;
+  line-height: 1.05 !important;
+  font-weight: 900 !important;
+}
+
+.fapi-order-form .product-row .fapi-form-discounted-price {
+  text-decoration: none !important;
+  color: #D4AF37 !important;
+}
