@@ -396,3 +396,24 @@
     margin: 16px 0 0 0 !important;
   }
 }
+/* ===== FINÁLNÍ ÚPRAVY ===== */
+
+/* Kancelářská opice na střed */
+.fapi-order-form::before {
+  display: flex !important;
+  width: max-content !important;
+  margin: 0 auto 18px auto !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Skrýt plovoucí cenový box - duplicitní shrnutí ceny */
+.fapi-order-form .fapi-float-price-container,
+.fapi-order-form .fapi-form-float-price,
+.fapi-float-price-container,
+.fapi-form-float-price {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
