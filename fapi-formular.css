@@ -1,7 +1,3 @@
-/* TEST NACTENI CSS */
-.fapi-order-form::before {
-  content: "TEST CSS FUNGUJE" !important;
-}
 /* hlavní formulář */
 .fapi-order-form,
 .fapi-order-form * {
@@ -566,4 +562,8 @@
 .fapi-order-form .product-row .fapi-form-item-price,
 .fapi-order-form .product-row .f-line-through {
   display: none !important;
+}
+/* TEST NACTENI CSS */
+.fapi-order-form::before {
+  content: "TEST CSS FUNGUJE" !important;
 }
