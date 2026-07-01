@@ -1,20 +1,355 @@
-/* ===== FINÁLNÍ OPRAVA V2 ===== */
+/* =========================================================
+   FAPI FORMULÁŘ – KANCELÁŘSKÁ OPICE
+   Mini kurz: Sčítání v Excelu bez zmatků
+   Verze: v2 – tmavý vzhled + bez horní ceny produktu
+   ========================================================= */
 
-/* schovat horní cenu u produktu */
-.fapi-order-form .product-price,
-.fapi-order-form .product-row .product-price,
-.fapi-order-form .fapi-form-item-price,
-.fapi-order-form .f-line-through {
-  display: none !important;
+/* hlavní formulář */
+.fapi-order-form,
+.fapi-order-form * {
+  box-sizing: border-box;
 }
 
-/* ponechat cenu jen ve shrnutí objednávky */
-.fapi-order-form .fapi-form-result .fapi-form-prices,
-.fapi-order-form .fapi-form-result .fapi-form-prices * {
-  display: flex;
+.fapi-order-form {
+  max-width: 650px !important;
+  width: 100%;
+  margin: 32px auto !important;
+  padding: 18px;
+  background: #111827;
+  color: #D1D5DB;
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  border-radius: 24px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-/* kontrola, že se opravdu načítá nová verze */
 .fapi-order-form::before {
-  content: "Kancelářská opice" !important;
+  content: "Kancelářská opice";
+  display: flex !important;
+  width: max-content !important;
+  margin: 0 auto 18px auto !important;
+  padding: 6px 12px;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #D4AF37;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.fapi-order-form > form {
+  border: 0 !important;
+  background: #1F2937;
+  border-radius: 18px;
+  overflow: visible !important;
+}
+
+.fapi-order-form a {
+  color: #D4AF37;
+}
+
+.fapi-order-form .fapi-form-warning {
+  border-radius: 14px 14px 0 0 !important;
+}
+
+/* sekce */
+.fapi-order-form .fapi-form-basic-block {
+  margin: 0 0 14px;
+  background: #263244 !important;
+  border: 1px solid rgba(209, 213, 219, 0.12);
+  border-radius: 16px;
+  overflow: visible !important;
+}
+
+.fapi-order-form .fapi-container-header {
+  padding: 14px 18px !important;
+  background: #1F2937 !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  color: #FFFFFF !important;
+}
+
+.fapi-order-form .fapi-container-header .fapi-form-basic-block-title {
+  color: #FFFFFF !important;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.fapi-order-form .fapi-form-basic-block > div:not(.fapi-container-header) {
+  padding: 22px !important;
+}
+
+.fapi-order-form label {
+  color: #D1D5DB !important;
+  font-weight: 650;
+}
+
+/* položka produktu */
+.fapi-order-form .product-row {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+  flex-wrap: wrap !important;
+  gap: 16px !important;
+  padding: 18px !important;
+  background: linear-gradient(135deg, #1F2937 0%, #263244 100%);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 14px;
+}
+
+.fapi-order-form .product-row > div {
+  min-width: 0;
+}
+
+.fapi-order-form .product-row label,
+.fapi-order-form .product-row span {
+  color: #FFFFFF !important;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.fapi-order-form .product-row p {
+  margin: 12px 0 0;
+  color: #D1D5DB !important;
+  line-height: 1.55;
+}
+
+.fapi-order-form .product-row em {
+  font-style: normal;
+}
+
+.fapi-order-form .f-form-radio,
+.fapi-order-form .f-form-checkbox {
+  accent-color: #D4AF37;
+}
+
+/* horní cenu produktu schováme – cena zůstává dole ve shrnutí */
+.fapi-order-form .product-row .product-price,
+.fapi-order-form .product-row .fapi-form-item-price,
+.fapi-order-form .product-row .f-line-through {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* vstupní pole */
+.fapi-order-form .f-form-input:not(.country-fake-input) {
+  min-height: 44px;
+  padding: 11px 13px !important;
+  background: #111827 !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(209, 213, 219, 0.28) !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+}
+
+.fapi-order-form .f-form-input:focus {
+  outline: none !important;
+  border-color: #D4AF37 !important;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.22) !important;
+}
+
+.fapi-order-form .f-form-input::placeholder {
+  color: rgba(209, 213, 219, 0.55);
+}
+
+.fapi-order-form .fapi-form-basic-data button[type="button"] {
+  min-height: 44px;
+  background: #111827 !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(209, 213, 219, 0.28) !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+}
+
+.fapi-order-form .fapi-form-basic-data button[type="button"] span,
+.fapi-order-form .fapi-form-basic-data button[type="button"] svg {
+  color: #FFFFFF !important;
+}
+
+/* dropdown země */
+.fapi-order-form [role="listbox"] {
+  position: relative !important;
+  z-index: 9999 !important;
+  background: #FFFFFF !important;
+  color: #111827 !important;
+}
+
+.fapi-order-form [role="option"] {
+  color: #111827 !important;
+}
+
+/* platební metoda */
+.fapi-order-form .fapi-form-payment-method > div {
+  min-height: 84px;
+  background: #111827 !important;
+  border: 2px solid rgba(212, 175, 55, 0.55) !important;
+  border-radius: 14px !important;
+  box-shadow: none !important;
+  transition: none !important;
+  cursor: default !important;
+}
+
+.fapi-order-form .fapi-form-payment-method > div:hover {
+  transform: none !important;
+  border-color: rgba(212, 175, 55, 0.55) !important;
+  box-shadow: none !important;
+  cursor: default !important;
+}
+
+.fapi-order-form .fapi-form-payment-method .payment-method-selected {
+  background: #1F2937 !important;
+  border-color: #D4AF37 !important;
+  box-shadow: none !important;
+}
+
+/* shrnutí objednávky */
+.fapi-order-form .fapi-form-result {
+  background: #1F2937 !important;
+  border-color: rgba(33, 163, 102, 0.35) !important;
+  position: static !important;
+}
+
+.fapi-order-form .fapi-form-result .fapi-form-prices {
+  float: none !important;
+  clear: both !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: 360px;
+  margin: 16px 0 0 auto !important;
+  padding: 16px 18px !important;
+  background: #111827 !important;
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  border-radius: 14px !important;
+  position: static !important;
+}
+
+.fapi-order-form .fapi-form-prices-total-discount-label,
+.fapi-order-form .fapi-form-prices-repayment-with-vat-label {
+  color: #D1D5DB !important;
+}
+
+.fapi-order-form .fapi-form-prices-total-discount-value {
+  color: #D4AF37 !important;
+  font-weight: 800;
+}
+
+.fapi-order-form .fapi-form-prices-repayment-with-vat-value {
+  color: #D4AF37 !important;
+  font-size: 32px !important;
+  line-height: 1.1;
+  font-weight: 950;
+}
+
+/* schovat plovoucí cenový box */
+.fapi-order-form .fapi-float-price-container,
+.fapi-order-form .fapi-form-float-price,
+.fapi-float-price-container,
+.fapi-form-float-price {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* tlačítko */
+.fapi-order-form .fapi-submit-button {
+  width: 100% !important;
+  min-height: 60px;
+  padding: 16px 22px !important;
+  background: linear-gradient(180deg, #27B873 0%, #21A366 100%) !important;
+  color: #FFFFFF !important;
+  border: 0 !important;
+  border-radius: 14px !important;
+  font-size: 17px !important;
+  font-weight: 900 !important;
+  line-height: 1.2;
+  box-shadow: 0 16px 32px rgba(33, 163, 102, 0.34);
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+}
+
+.fapi-order-form .fapi-submit-button span {
+  color: #FFFFFF !important;
+}
+
+.fapi-order-form .fapi-submit-button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.04);
+  box-shadow: 0 20px 38px rgba(33, 163, 102, 0.42);
+}
+
+.fapi-order-form .fapi-submit-button:active {
+  transform: translateY(0);
+}
+
+.fapi-order-form .fapi-submit-button:focus-visible {
+  outline: 3px solid rgba(212, 175, 55, 0.6);
+  outline-offset: 3px;
+}
+
+/* patička FAPI */
+.fapi-order-form > p {
+  color: rgba(209, 213, 219, 0.65) !important;
+}
+
+/* mobilní úpravy */
+@media (max-width: 640px) {
+  .fapi-order-form {
+    margin: 16px auto !important;
+    padding: 12px;
+    border-radius: 18px;
+  }
+
+  .fapi-order-form::before {
+    margin-bottom: 10px !important;
+    font-size: 12px;
+  }
+
+  .fapi-order-form > form {
+    border-radius: 14px;
+  }
+
+  .fapi-order-form .fapi-form-basic-block {
+    margin-bottom: 12px;
+    border-radius: 14px;
+  }
+
+  .fapi-order-form .fapi-form-basic-block > div:not(.fapi-container-header) {
+    padding: 16px !important;
+  }
+
+  .fapi-order-form .product-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 16px !important;
+  }
+
+  .fapi-order-form .product-row > div {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .fapi-order-form label {
+    display: block;
+    width: 100% !important;
+    margin-bottom: 6px;
+  }
+
+  .fapi-order-form .fapi-form-payment-methods .f-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .fapi-order-form .fapi-form-result .fapi-form-prices {
+    max-width: 100%;
+    margin: 16px 0 0 0 !important;
+  }
+
+  .fapi-order-form .fapi-submit-button {
+    min-height: 62px;
+    padding: 16px !important;
+    font-size: 16px !important;
+  }
 }
