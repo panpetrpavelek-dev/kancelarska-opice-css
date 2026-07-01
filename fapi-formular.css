@@ -323,3 +323,76 @@
     font-size: 16px !important;
   }
 }
+/* ===== OPRAVY ROZLOŽENÍ FAPI ===== */
+
+/* 1) Nenechat dropdown a další prvky ořezávat */
+.fapi-order-form > form,
+.fapi-order-form .fapi-form-basic-block {
+  overflow: visible !important;
+}
+
+/* 2) Lepší rozložení produktového řádku */
+.fapi-order-form .product-row {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+  flex-wrap: wrap !important;
+  gap: 16px !important;
+}
+
+.fapi-order-form .product-row > div {
+  min-width: 0;
+}
+
+.fapi-order-form .product-row .product-price {
+  margin-left: auto !important;
+  text-align: right !important;
+  min-width: 140px;
+}
+
+.fapi-order-form .product-row .fapi-form-discounted-price {
+  font-size: 26px !important;
+  line-height: 1.1 !important;
+  word-break: keep-all;
+}
+
+/* 3) Oprava shrnutí objednávky - zrušit plavání / divné pozicování */
+.fapi-order-form .fapi-form-result,
+.fapi-order-form .fapi-form-result .fapi-form-prices {
+  position: static !important;
+}
+
+.fapi-order-form .fapi-form-result .fapi-form-prices {
+  float: none !important;
+  clear: both !important;
+  display: block !important;
+  margin: 16px 0 0 auto !important;
+  width: 100% !important;
+  max-width: 360px !important;
+}
+
+/* 4) Výběr země / dropdown musí být nad ostatními prvky */
+.fapi-order-form [role="listbox"] {
+  position: relative !important;
+  z-index: 9999 !important;
+}
+
+/* 5) Mobilní doladění */
+@media (max-width: 640px) {
+  .fapi-order-form .product-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .fapi-order-form .product-row .product-price {
+    margin-left: 0 !important;
+    text-align: left !important;
+    min-width: auto !important;
+    width: 100% !important;
+  }
+
+  .fapi-order-form .fapi-form-result .fapi-form-prices {
+    max-width: 100% !important;
+    margin: 16px 0 0 0 !important;
+  }
+}
